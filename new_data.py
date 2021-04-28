@@ -15,7 +15,7 @@ st.markdown('<style>body{background-color: lightblue;}Survey</style>',unsafe_all
 st.markdown("## **Actual data of survey**")
 @st.cache
 def load_data():
-    df = pd.read_csv("https://docs.google.com/spreadsheets/d/1gbyu86do0F74tNW3gnWCDt6UrmaCi_KCDDykv-Mz1Mc/edit?ts=6088f565#gid=1705347459")
+    df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRgrDZE2S8tlFiZR3NMS63s695Zz1FkFW_I0ea7m5XYr1Pj-Bs84-oLUqIgZ--6UlJSc4xZyrNKCg9H/pub?gid=1705347459&single=true&output=csv")
     return df
 
 df = load_data()
