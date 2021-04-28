@@ -4,6 +4,9 @@ import numpy as np
 from PIL import Image
 import plotly.express as px
 import plotly.graph_objects as go
+from streamlit import caching
+
+caching.clear_cache()
 
 st.title('Status of Survey about covid')
 #st.write("It shows ***PC level analysis*** in Tirupati PC")
@@ -13,7 +16,7 @@ st.sidebar.title("Selector")
 st.markdown('<style>body{background-color: lightblue;}Survey</style>',unsafe_allow_html=True)
 #container=st.beta_container()
 st.markdown("## **Actual data of survey**")
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_data():
     df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRgrDZE2S8tlFiZR3NMS63s695Zz1FkFW_I0ea7m5XYr1Pj-Bs84-oLUqIgZ--6UlJSc4xZyrNKCg9H/pub?gid=1705347459&single=true&output=csv")
     return df
@@ -23,7 +26,7 @@ df = load_data()
 
 #data=df[df['Status of Call']=='Call Responded']
 #st.write(data)
-
+st.button('Rerun')
 
 
 def get_table():
